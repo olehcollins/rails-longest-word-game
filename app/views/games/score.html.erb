@@ -1,0 +1,27 @@
+<h1>Games#score</h1>
+<p>Find me in app/views/games/score.html.erb</p>
+
+<div class="score word-game">
+  <%case @message %>
+  <%when 1%>
+    <h3 class="message">
+      Sorry but
+      <strong><%=@word.upcase%></strong>
+      can't be built out of <%=@letters.join(', ').upcase%>
+    </h3>
+  <%when 2%>
+    <h3 class="message">
+      <strong>Congratulations! </strong>
+      <%=@word.upcase%>
+      is a vaid English word!
+    </h3>
+  <%else%>
+    <h3 class="message">
+      Sorry but
+      <strong><%=@word.upcase%></strong>
+      does not seem to be a valid English word
+    </h3>
+  <%end%>
+  <%=link_to 'Play again', games_new_url%>
+</div>
+<br>
